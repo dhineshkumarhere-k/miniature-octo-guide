@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", sans-serif;
+  
+  --color-bg: #f8fafc;
+  --color-brand-primary: #6366f1;
+  --color-brand-primary-light: #e0e7ff;
+  --color-text-main: #1e293b;
+  --color-text-sub: #64748b;
+  --color-success: #10b981;
+  --color-border-main: #e2e8f0;
+  
+  --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --radius-card: 16px;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text-main antialiased font-sans;
+  }
+}
+
+.sleek-card {
+  @apply bg-white rounded-card shadow-card border border-border-main p-6 transition-all;
+}
+
+.rating-chip {
+  @apply w-9 h-9 flex items-center justify-center font-bold text-sm rounded-lg transition-colors;
+}
+
+.rating-high { @apply bg-emerald-50 text-emerald-800; }
+.rating-mid { @apply bg-amber-50 text-amber-800; }
+.rating-low { @apply bg-red-50 text-red-800; }
+
+.score-pill {
+  @apply px-3 py-1 bg-brand-primary-light text-brand-primary rounded-full text-xs font-bold leading-none;
+}
+
+.ai-container {
+  @apply bg-blue-50/80 border border-blue-100 rounded-card p-6 text-blue-900;
+}
+
+.step-active-tab {
+  @apply text-brand-primary border-b-2 border-brand-primary pb-1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full hover:bg-slate-300 transition-colors;
+}
